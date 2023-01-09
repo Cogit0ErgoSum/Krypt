@@ -5,7 +5,7 @@ import { BsInfoCircle } from "react-icons/bs"
 
 import { TransactionContext } from "../context/TransactionContext";
 import { Loader } from "./";
-
+import { shortenAddress } from "../utils/shortenAddress";
 
 const commonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
@@ -52,6 +52,7 @@ const Welcome = () => {
                         type="button"
                         onClick={connectWallet}
                         className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]">
+                        <AiFillAlipayCircle className="text-white mr-2" />
                         <p className="text-white text-base font-smeibold">
                             Connect Wallet
                         </p>
@@ -86,7 +87,7 @@ const Welcome = () => {
                             </div>
                             <div>
                                 <p className="text-white font-light text-sm">
-                                    0xdsadsadasfdsfasfsa
+                                    {currentAccount}
                                 </p>
                                 <p className="text-white font-semibold text-lg mt-1">
                                     Ethereum
